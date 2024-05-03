@@ -25,7 +25,15 @@ export class PokemonApiService {
     this.lista = pokemons.results;
     this.lista.map(ele =>{
       const resutl: Observable<any> = this.getPokemons(ele.url).pipe(res => res);
-      
+      pokemon: Object ;
+      resutl.subscribe({
+        next:(resutl: any)=>{
+          console.log(resutl);
+        },
+        error:(err:any) => {
+
+        }
+      });
 
 
       console.log();
